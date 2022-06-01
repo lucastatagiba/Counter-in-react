@@ -17,7 +17,7 @@ const Counter = () => {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [countAuthomatic]);
 
   return (
     <section className={styles.container}>
