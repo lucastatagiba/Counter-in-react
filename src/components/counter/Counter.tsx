@@ -1,3 +1,5 @@
+import Button from "components/button/Button";
+import Title from "components/tittle/Title";
 import { useEffect, useState } from "react";
 import styles from "./counter.module.sass";
 
@@ -22,29 +24,21 @@ const Counter = () => {
   return (
     <section className={styles.container}>
       <div className={styles.countAuthomatic}>
-        <h2>Authomatic counter</h2>
+        <Title>Authomatic counter</Title>
         <span className={styles.counterNumber}>{countAuthomatic}</span>
-        <button onClick={resetCounter}>Reset counter</button>
+        <Button func={resetCounter}>Reset counter</Button>
       </div>
 
       <div className={styles.countManual}>
-        <h2>Manual counter</h2>
+        <Title>Manual counter</Title>
         <span className={styles.counterNumber}>{countManual}</span>
         <div className={styles.buttonContainer}>
-          <button
-            onClick={() => {
-              setCountManual(countManual - 1);
-            }}
-          >
+          <Button func={() => setCountManual(countManual - 1)}>
             Decrement counter
-          </button>
-          <button
-            onClick={() => {
-              setCountManual(countManual + 1);
-            }}
-          >
+          </Button>
+          <Button func={() => setCountManual(countManual + 1)}>
             Increment counter
-          </button>
+          </Button>
         </div>
       </div>
     </section>
